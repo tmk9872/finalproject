@@ -1,0 +1,9 @@
+---
+title: "260 Final Project Proposal"
+format: html
+editor: visual
+---
+
+## Test proposal doc
+
+Testing that creating qmd will come up as website
