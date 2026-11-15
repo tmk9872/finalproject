@@ -5,14 +5,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>260 Final Project Proposal • finalproject</title>
+<title>260 Final Project Proposals • finalproject</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><script src="proposal_files/libs/quarto-html/popper.min.js"></script><script src="proposal_files/libs/quarto-html/tippy.umd.min.js"></script><link href="proposal_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="proposal_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="260 Final Project Proposal">
+<!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="260 Final Project Proposals">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -36,7 +36,7 @@
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
 <li><a class="dropdown-item" href="../articles/instructions.html">Instructions for BST260 projects, 2026</a></li>
-    <li><a class="dropdown-item" href="../articles/proposal.html">260 Final Project Proposal</a></li>
+    <li><a class="dropdown-item" href="../articles/proposal.html">260 Final Project Proposals</a></li>
     <li><a class="dropdown-item" href="../articles/stubs.html">Stubs for BST260 projects, 2026</a></li>
   </ul>
 </li>
@@ -55,7 +55,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
-      <h1>260 Final Project Proposal</h1>
+      <h1>260 Final Project Proposals</h1>
 
 
 
@@ -69,10 +69,58 @@
 
 
 
-    <section class="level2"><h2 id="test-proposal-doc">Test proposal doc<a class="anchor" aria-label="anchor" href="#test-proposal-doc"></a>
+    <p><strong>To:</strong> BST260 Teaching Team, Fall 2026</p>
+<section class="section level2"><h2 id="final-project-proposal-1-firearm-legislation-and-suicide-mortality">Final Project Proposal 1: Firearm Legislation and Suicide Mortality<a class="anchor" aria-label="anchor" href="#final-project-proposal-1-firearm-legislation-and-suicide-mortality"></a>
 </h2>
-<p>Testing that creating qmd will come up as website</p>
-</section><script id="quarto-html-after-body" type="application/javascript">
+<section class="level2"><h3 id="background-and-research-question">Background and research question<a class="anchor" aria-label="anchor" href="#background-and-research-question"></a>
+</h3>
+<p>Firearms are used in a substantial share of suicide deaths in the United States, and attempts involving firearms are particularly likely to be fatal. A <a href="https://www.rand.org/research/gun-policy/analysis/essays/firearm-availability-suicide.html" class="external-link">RAND review of firearm availability and suicide</a> summarizes research finding that greater firearm availability is consistently associated with higher firearm suicide rates.</p>
+<p>In a recent lecture, Dr. Vikram Patel from Harvard Medical School also discussed the relationship between firearm availability and suicide mortality.</p>
+<p>I am interested in whether a similar association can be observed when examining state-level firearm legislation and suicide mortality. Specifically, I plan to focus on firearm purchase waiting-period laws, which may influence how readily firearms can be obtained.</p>
+<p><strong>Research question:</strong> Is the presence of a state firearm purchase waiting-period law associated with lower firearm suicide mortality rates across U.S. states?</p>
+</section><section class="level2"><h3 id="proposed-data-and-methodology">Proposed data and methodology<a class="anchor" aria-label="anchor" href="#proposed-data-and-methodology"></a>
+</h3>
+<p>I plan to combine two publicly available sources:</p>
+<ol type="1">
+<li><p><strong>RAND State Firearm Law Database:</strong> The <code>gunleg</code> dataset provided in the course package contains historical records of firearm legislation, including implementation, modification, and repeal dates. I will use these records to construct a binary indicator of whether a general firearm purchase waiting-period law was in effect in each state and year. The exposure will be coded as 1 if a qualifying law was in effect and 0 otherwise. I will account for implementation and repeal dates and examine any missing or ambiguous legislative records before finalizing the indicator.</p></li>
+<li><p><strong>CDC mortality data:</strong> I will obtain annual state-level suicide mortality data from <a href="https://wonder.cdc.gov/deaths-by-underlying-cause.html" class="external-link">CDC WONDER’s Underlying Cause of Death database</a>. The primary outcome will be the age-adjusted firearm suicide death rate per 100,000 people (ICD-10 codes X72–X74), treated as a continuous variable.</p></li>
+</ol>
+<p>The unit of analysis will be the <strong>state-year</strong>, covering the 50 U.S. states. For the primary analysis, I plan to focus on several selected years to compare states with and without waiting-period legislation. I will consider using the law status at the beginning of each year to account for legislation implemented partway through a calendar year.</p>
+<p>I will begin with descriptive statistics and visualizations to compare mortality rates across the two groups. I will then fit <strong>linear regression models</strong> to assess whether waiting-period legislation is associated with differences in firearm suicide rates.</p>
+<p>I expect interpretation to be limited by potential confounding, differences in firearm ownership across states, other policies enacted around the same time, and the ecological nature of state-level data. Additionally, the RAND legislation and CDC mortality datasets do not directly provide several potentially relevant state-level socioeconomic and contextual variables. While these could potentially be obtained from additional sources, the scope of the analysis may limit my ability to fully account for these factors.</p>
+<p>Missing or suppressed mortality observations will be identified and excluded from analyses requiring those values, with the extent of missingness summarized. I will also review the completeness of legislative records before interpreting states without recorded waiting-period laws as having no such requirement.</p>
+<p>As a secondary analysis, I will examine states that implemented or repealed waiting-period legislation during the study period. For states with sufficient data before and after a legislative change, I will use descriptive statistics and visualizations to explore how firearm suicide rates evolved around the change.</p>
+</section><section class="level2"><h3 id="goal-and-limitations">Goal and limitations<a class="anchor" aria-label="anchor" href="#goal-and-limitations"></a>
+</h3>
+<p>My goal is to examine whether these public datasets reveal an association broadly consistent with patterns previously documented in the literature. Because legislation is not a direct measure of firearm availability, this analysis will explore a related relationship rather than directly replicate earlier findings. I do not intend to establish that firearm legislation causes changes in suicide mortality, as causal inference would require addressing substantial confounding and other methodological challenges.</p>
+<p>As mentioned already, I expect interpretation to be limited by potential confounding.</p>
+</section></section><section class="section level2"><h2 id="final-project-proposal-2-nhanes-variables-associated-with-depressive-symptoms">Final Project Proposal 2: NHANES Variables Associated with Depressive Symptoms<a class="anchor" aria-label="anchor" href="#final-project-proposal-2-nhanes-variables-associated-with-depressive-symptoms"></a>
+</h2>
+<section class="level2"><h3 id="background-and-research-question-1">Background and research question<a class="anchor" aria-label="anchor" href="#background-and-research-question-1"></a>
+</h3>
+<p>Mental health is shaped by a range of behavioral, socioeconomic, and demographic factors. Sleep, physical activity, and financial circumstances are all plausible correlates of depressive symptoms, but their relationships may overlap. I am interested in whether these factors remain associated with self-reported depressive symptoms when considered together in a regression model.</p>
+<p>For this project, I plan to use the National Health and Nutrition Examination Survey (NHANES) data. The unit of analysis will be the individual survey respondent, focusing on adults aged 20 years and older from the 2009–2012 NHANES data available in the <code>NHANES</code> R package.</p>
+<p><strong>Research question:</strong> Among adults in the NHANES dataset, how are sleep duration, recreational physical activity, and household income relative to the poverty threshold associated with self-reported depressive symptoms after accounting for demographic characteristics?</p>
+</section><section class="level2"><h3 id="proposed-data-and-methodology-1">Proposed data and methodology<a class="anchor" aria-label="anchor" href="#proposed-data-and-methodology-1"></a>
+</h3>
+<p>The proposed variables are:</p>
+<ul>
+<li>
+<strong>Primary outcome:</strong> <code>Depressed</code>, which records the frequency of feeling down, depressed, or hopeless (<code>None</code>, <code>Several</code>, or <code>Most</code>). For the primary analysis, I will compare any reported symptoms (<code>Several</code> or <code>Most</code>) with <code>None</code>, creating a binary outcome (1 = any reported symptoms, 0 = none).</li>
+<li>
+<strong>Main predictors:</strong> <code>SleepHrsNight</code> (usual weekday/workday sleep duration, modeled as a continuous variable), <code>PhysActive</code> (binary Yes/No indicator of moderate- or vigorous-intensity recreational physical activity), and <code>Poverty</code> (continuous family income-to-poverty ratio).</li>
+<li>
+<strong>Additional variables:</strong> I plan to adjust for age, gender, race/ethnicity, and education level, based on their potential relationships with both the proposed predictors and depressive symptoms. Additional variables may be considered in exploratory analyses.</li>
+<li>
+<strong>Missing data:</strong> I will examine the extent and patterns of missing data across the outcome, predictors, and adjustment variables. If missingness substantially reduces the n-size, I will consider deprioritizing certain features or discuss the potential for selection bias.</li>
+</ul>
+<p>I will begin with descriptive summaries, distributions, and visualizations of depressive symptom frequency across the proposed predictors. I will then fit a <strong>multivariable logistic regression</strong> model to estimate the adjusted association between each predictor and reporting any depressive symptoms.</p>
+<p>As a secondary analysis, I may consider an <strong>ordinal logistic regression</strong> using all four <code>Depressed</code> response categories, subject to checking whether the modeling assumptions are reasonable.</p>
+</section><section class="level2"><h3 id="goal-and-limitations-1">Goal and limitations<a class="anchor" aria-label="anchor" href="#goal-and-limitations-1"></a>
+</h3>
+<p>My goal is to use a familiar multivariable regression framework to examine which behavioral and socioeconomic variables show associations with depressive symptoms in the available data, and whether those associations persist after adjustment for other measured characteristics.</p>
+<p>The main limitations are the cross-sectional nature of the data, self-reported measures, potential unmeasured confounding, and possible multicollinearity. Additionally, the <code>Depressed</code> variable captures a self-reported depressive symptom rather than a clinical diagnosis of depression. Findings may therefore not generalize to diagnosed depression.</p>
+</section></section><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -155,7 +203,8 @@
       }
     }
   });
-  </script></main>
+  </script></main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
