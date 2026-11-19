@@ -163,3 +163,18 @@ multicollinearity. Additionally, the `Depressed` variable captures a
 self-reported depressive symptom rather than a clinical diagnosis of
 depression. Findings may therefore not generalize to diagnosed
 depression.
+
+## AI Use
+
+I’ve used AI to do exploratory investigation of publicly available
+datasets for proposal 1 and clean up my proposal.
+
+Model used: GPT-6
+
+Prompts:
+
+\-
+`I want to investigate relationship between gun legislature and suicide mortalitiy. I already have gun legislature data from RAND. Suggest datasets I can use to understand suicide mortality by state`
+
+\-
+`Review my proposal for any grammar issue and any overreach in assumption`
